@@ -1,0 +1,26 @@
+echo "nginx-proxy 컨테이너 입니다"
+ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill -9
+
+# rm -rf swu_blog_deploy
+rm -rf swu_stresstest_example2
+
+ls -a
+
+# git clone https://github.com/dev-library/swu_blog_deploy.git
+git clone https://github.com/dev-library/swu_stresstest_example2
+
+sleep 3
+
+ls -a
+
+# cd swu_blog_deploy
+cd swu_stresstest_example2
+
+ls -a
+sleep 3
+chmod 544 ./gradlew
+sleep3
+./gradlew clean build
+
+ls -a
+java -jar ./build/libs/spring_rest-0.0.1-SNAPSHOT.jar
