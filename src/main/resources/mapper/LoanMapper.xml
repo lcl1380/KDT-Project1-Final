@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.blog.mapper.LoanMapper">
+    <select id="findById" resultType="com.spring.blog.vo.LoanBook">
+        SELECT book_num, book_name, author, loan_start_date FROM loan_book WHERE id=#{testid} ORDER BY loan_start_date;
+    </select>
+
+    <insert id="save">
+        INSERT INTO loan_book(id, book_num, book_name, author) VALUES (#{id}, #{book_num}, #{book_name}, #{author});
+    </insert>
+
+
+
+</mapper>

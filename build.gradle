@@ -17,9 +17,24 @@ configurations {
 
 repositories {
 	mavenCentral()
+
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'	// web
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'	// mybatis
+	implementation 'org.springframework.boot:spring-boot-starter-security'	// spring security
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'	// jsp
+	//implementation 'javax.servlet:jstl'	// jstl
+	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '2.0.0'
+	compileOnly 'org.projectlombok:lombok'	// lombok
+	//runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'	// mariadb
+	annotationProcessor 'org.projectlombok:lombok'	// lombok
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'	// tomcat
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'	//test code
+	implementation 'mysql:mysql-connector-java:8.0.32'
+
+	/*
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
 	testImplementation 'org.projectlombok:lombok:1.18.26'
@@ -34,8 +49,11 @@ dependencies {
 
 
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '2.0.0'
+	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '3.0.1'
+
+*/
 }
+
 
 tasks.named('test') {
 	useJUnitPlatform()

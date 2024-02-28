@@ -12,20 +12,19 @@
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
     <p>
-        Name<br>
-        <input type="text" name="id" value="${user.id}"/>
+        <strong>ID:</strong> ${user.id}
     </p>
     <p>
-        Username<br>
-        <input type="text" name="username" value="${user.name}"/>
+        password<br>
+        <input type="text" name="pw" value="${user.pw}"/>
     </p>
     <p>
         Email<br>
         <input type="text" name="email" value="${user.email}"/>
     </p>
     <p>
-        Password<br>
-        <input type="password" name="password" placeholder="Password를 입력해주세요"/>
+        Name<br>
+        <input type="text" name="Name" value="${user.name}"/>
     </p>
 
     <button type="submit">저장하기</button>

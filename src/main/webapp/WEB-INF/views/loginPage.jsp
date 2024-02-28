@@ -8,14 +8,14 @@
 </head>
 <body>
 <form action="/auth" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
     <h2>로그인</h2>
     <div>
         <input type="text" name="id" placeholder="아이디"/>
     </div>
     <div>
-        <input type="password" name="password" placeholder="비밀번호"/>
+        <input type="password" name="pw" placeholder="비밀번호"/>
     </div>
 
     <button type="submit">로그인</button>

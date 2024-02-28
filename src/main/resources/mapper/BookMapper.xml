@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.blog.mapper.BookMapper">
+    <select id="findAll" resultType="com.spring.blog.vo.Book">
+        SELECT * FROM book;
+    </select>
+
+    <select id="findByNameContaining" resultType="com.spring.blog.vo.Book">
+        SELECT * FROM book WHERE book_name LIKE CONCAT('%', #{Keyword}, '%') OR author LIKE CONCAT('%', #{Keyword}, '%');
+    </select>
+
+    <select id="findByNum" resultType="com.spring.blog.vo.Book">
+        SELECT * FROM book WHERE book_num=#{book_num};
+    </select>
+
+    <update id="update">
+        UPDATE book SET availability= #{availability} WHERE book_num=#{book_num};
+    </update>
+</mapper>
+

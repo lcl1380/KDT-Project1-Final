@@ -13,16 +13,16 @@
 
 
     <div>
-        <input type="text" name="username" placeholder="*이름"/>
-    </div>
-    <div>
         <input type="text" name="id" placeholder="*아이디"/>
     </div>
     <div>
-        <input type="text" name="email" placeholde="*이메일"/>
+        <input type="password" name="pw" placeholder="*비밀번호"/>
     </div>
     <div>
-        <input type="password" name="password" placeholder="*비밀번호"/>
+        <input type="text" name="email" placeholder="*이메일"/>
+    </div>
+    <div>
+        <input type="text" name="name" placeholder="*이름"/>
     </div>
 
     <button type="submit">회원가입</button>
