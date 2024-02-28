@@ -1,7 +1,7 @@
 #!/bin/bash
 
 docker restart jenkins-host
-# docker restart reverse_proxy
+docker restart nginx-proxy
 docker restart log_collection
 
 docker restart worker1
