@@ -4,9 +4,9 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
   datasource:
-    url: jdbc:mysql://192.168.56.101:3333/library
-    username: kimyebeen
-    password: root
+    url: jdbc:mysql://library_db:3306/library
+    username: cherish
+    password: 1380
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
