@@ -1,12 +1,16 @@
+server:
+  port: 8088
+
 spring:
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+
   datasource:
     url: jdbc:mysql://library_db:3306/library
-    username: cherish
-    password: 1380
+    username: root
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:

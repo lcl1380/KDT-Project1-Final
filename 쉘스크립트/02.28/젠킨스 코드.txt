@@ -1,0 +1,33 @@
+http://192.168.56.202:9090 접속
+
+다음 내용 입력 :
+
+echo "worker1 컨테이너 입니다---------------------------------------------------------"
+
+echo "자바 프로세스 kill 진행합니다---------------------------------------------------------"
+ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill -9
+
+echo "이전에 설치되어있던 프로젝트를 제거합니다---------------------------------------------------------"
+rm -rf KDT-Project1-Final
+ls -a
+
+echo "새 clone을 받아옵니다-------------------------------------------------------"
+git clone https://github.com/lcl1380/KDT-Project1-Final.git
+
+sleep 1
+
+echo "받아온 프로젝트 폴더로 이동합니다----------------------------------------"
+ls -a
+cd KDT-Project1-Final
+
+echo "파일들의 권한을 확인하고, ./gradlew 의 권한을 바꾸고 build를 실행합니다 ---------------------------------"
+ls -a
+sleep 1
+chmod 544 ./gradlew
+./gradlew clean build
+
+ls -a
+chmod 755 ./build/libs/blog-0.0.1-SNAPSHOT.war
+sleep 1
+nohup java -jar ./build/libs/blog-0.0.1-SNAPSHOT.war > /dev/null 2>&1 &
+sleep 5
