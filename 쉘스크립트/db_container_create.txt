@@ -1,0 +1,8 @@
+docker run -d \
+  --name library_db \
+  --network back-network \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=library_db \
+  -e MYSQL_USER=cherish \
+  -e MYSQL_PASSWORD=1380 \
+  mysql:8.0

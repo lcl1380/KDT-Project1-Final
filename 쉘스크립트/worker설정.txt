@@ -1,0 +1,24 @@
+docker run -d -it --net=back-network --name=worker2 ubuntu:22.04
+docker exec -it worker2 bash
+adduser worker1
+
+cd ~
+nano /etc/sudoers
+
+worker2  ALL=(ALL:ALL) ALL
+worker3  ALL=(ALL:ALL) ALL
+
+
+
+apt update
+apt install nano
+apt install sudo
+apt-get install net-tools
+sudo apt install curl
+
+apt-get install iputils-ping -y
+
+# nginx 서버 접속 안됨.. 8080포트 리슨 시키기
+apt-get upgrade python3 -y
+python3 -m http.server 8080
+netstat -tuln | grep 8080
